@@ -1,6 +1,6 @@
 import OctokitProvider from "@/context/OctokitProvider";
 import StoreProvider from "@/context/StoreProvider";
-import Content from "@/types/Content";
+import Content from "@/components/Content";
 
 function App() {
   return (
