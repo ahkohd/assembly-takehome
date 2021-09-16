@@ -8,9 +8,6 @@ const ScrollArrow = ({ offset }: ScrollArrowProps) => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
-    console.log(
-      window.innerHeight + window.pageYOffset >= document.body.offsetHeight
-    );
     setShowScroll(
       window.innerHeight + window.pageYOffset >=
         document.body.offsetHeight - offset
