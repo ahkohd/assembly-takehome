@@ -6,6 +6,7 @@ import { StoreContext } from "@/context/StoreProvider";
 import EmptyState from "@/components/EmptyState";
 import ErrorView from "@/components/ErrorView";
 import BlockLoader from "@/components/BlockLoader";
+import ScrollArrow from "@/components/ScrollArrow";
 
 const Content = () => {
   const { results, query, isLoading } = useContext(StoreContext);
@@ -35,6 +36,7 @@ const Content = () => {
         />
       )}
       <ErrorView />
+      <ScrollArrow />
     </section>
   );
 };
