@@ -20,7 +20,7 @@ const SearchResults = () => {
               className="hover:underline hover:text-blue-700"
               title={result.name}
             >
-              <h3 className="font-semibold block">{result.name}</h3>
+              <h1 className="font-semibold block">{result.name}</h1>
             </a>
             <ul className="flex gap-3 mt-2">
               <li>
