@@ -1,35 +1,33 @@
-import { useState, useEffect, MutableRefObject } from "react";
+import { useState, useEffect } from "react";
 
 interface ScrollArrowProps {
-  elementRef: MutableRefObject<HTMLDivElement | null>;
   offset: number;
 }
 
-const ScrollArrow = ({ elementRef, offset }: ScrollArrowProps) => {
+const ScrollArrow = ({ offset }: ScrollArrowProps) => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
-    if (elementRef.current) {
-      const elem = elementRef.current;
-      setShowScroll(
-        elem.offsetHeight + elem.scrollTop >= elem.scrollHeight - offset
-      );
-    }
+    console.log(
+      window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+    );
+    setShowScroll(
+      window.innerHeight + window.pageYOffset >=
+        document.body.offsetHeight - offset
+    );
   };
 
   const scrollTop = () => {
-    if (elementRef.current)
-      elementRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
-    const elem = elementRef.current;
-    elem?.addEventListener("scroll", checkScrollTop);
+    window.addEventListener("scroll", checkScrollTop);
 
     return () => {
-      elem?.removeEventListener("scroll", checkScrollTop);
+      window.removeEventListener("scroll", checkScrollTop);
     };
-  }, [elementRef]);
+  }, []);
 
   return (
     <button
