@@ -1,11 +1,6 @@
+import { createContext, Dispatch, FC, useState, SetStateAction } from "react";
+
 import Result from "@/types/Result";
-import React, {
-  createContext,
-  Dispatch,
-  FC,
-  useState,
-  SetStateAction,
-} from "react";
 
 interface StoreContextValue {
   results: Array<Result>;
@@ -16,6 +11,8 @@ interface StoreContextValue {
   setError: Dispatch<SetStateAction<Error>>;
   isLoading: boolean;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
+  query: string;
+  setQuery: Dispatch<SetStateAction<string>>;
 }
 
 export const StoreContext = createContext<StoreContextValue>(
@@ -23,6 +20,7 @@ export const StoreContext = createContext<StoreContextValue>(
 );
 
 const StoreProvider: FC = ({ children }) => {
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([] as Array<Result>);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -39,6 +37,8 @@ const StoreProvider: FC = ({ children }) => {
         setError,
         isLoading,
         setIsLoading,
+        query,
+        setQuery,
       }}
     >
       {children}

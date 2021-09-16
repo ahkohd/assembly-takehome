@@ -4,6 +4,7 @@ type Result = {
   stargazers_count: number;
   watchers_count: number;
   language: string;
+  html_url: string;
 };
 
 export default Result;
