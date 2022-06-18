@@ -12,7 +12,7 @@
     "@types/jest": "26.0.20",
     "@types/lodash": "^4.14.173",
     "@types/node": "12.19.16",
-    "@types/react": "17.0.1",
+    "@types/react": "17.0.47",
     "@types/react-dom": "17.0.0",
     "autoprefixer": "9.8.6",
     "lodash.debounce": "^4.0.8",
