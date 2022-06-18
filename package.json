@@ -13,7 +13,7 @@
     "@types/lodash": "^4.14.173",
     "@types/node": "12.19.16",
     "@types/react": "17.0.1",
-    "@types/react-dom": "17.0.0",
+    "@types/react-dom": "17.0.17",
     "autoprefixer": "9.8.6",
     "lodash.debounce": "^4.0.8",
     "postcss": "7.0.35",
